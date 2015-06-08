@@ -1,3 +1,6 @@
+![screenshot](https://raw.githubusercontent.com/eface2face/iosrtc-apprtc/master/art/iosrtc-apprtc.jpg)
+
+
 # iosrtc-apprtc
 
 Google's [apprtc](https://github.com/webrtc/apprtc) app running on Cordova iOS with [cordova-plugin-iosrtc](https://github.com/eface2face/cordova-plugin-iosrtc).
