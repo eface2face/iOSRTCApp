@@ -40,6 +40,6 @@ There are minor changes in the original HTML, JavaScript and CSS in order to mak
 
 * Given that the video stream is not directly attached to the `<video>` element (the *cordova-plugin-iosrtc* places a native `UIView` on top of it) the video `readyState` property is always 0, so the function `waitForRemoteVideo_` has been modified not to rely on `remoteVideo_.readyState >= 2`.
 
-* In order to correctly place video views (iOS native `UIView` elements) the plugin `refreshVideos()` is called when the local or video video is set.
+* In order to correctly place video views (iOS native `UIView` elements) the plugin `refreshVideos()` is called when the local or video video is set (this is because the CSS video elements use "transition" effects that modify their position and size during 1 second).
 
 * A new CSS file `css/main_overrides.css` changes the properties of video elements. For example, it sets `opacity: 0.85` in `#local-video` and `#remote-video` so HTML call controls are shown even below the native `UIView` elements rendering the local and remote video.
