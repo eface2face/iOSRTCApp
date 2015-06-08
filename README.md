@@ -5,7 +5,7 @@
 
 Google's [AppRTC](https://github.com/webrtc/apprtc) running in Cordova iOS with HTML5 and [cordova-plugin-iosrtc](https://github.com/eface2face/cordova-plugin-iosrtc).
 
-This project takes the HTML5 version of the [AppRTC](https://apprtc.appspot.com/) applications and runs it in Cordova iOS (iPhone, iPad...) by using the [cordova-plugin-iosrtc](https://github.com/eface2face/cordova-plugin-iosrtc). 
+This project takes the HTML5 version of the [AppRTC](https://apprtc.appspot.com/) application and runs it in Cordova iOS (iPhone, iPad...) by using the [cordova-plugin-iosrtc](https://github.com/eface2face/cordova-plugin-iosrtc). 
 
 
 ## Building
