@@ -49,4 +49,4 @@ There are minor changes in the original HTML, JavaScript and CSS in order to mak
 
 *AppRTC* code is owned by Google as stated in the original [LICENSE](LICENSE.md) file.
 
-Changes to the original *AppRTC* HTML5 source code (to become a Cordova iOS application) are written by Iñaki Baz Castillo at [eFace2Face, inc.](https://eface2face.com).
+Changes to the original *AppRTC* HTML5 source code (to become a Cordova iOS application) are written by Iñaki Baz Castillo at [eFace2Face, inc](https://eface2face.com).
