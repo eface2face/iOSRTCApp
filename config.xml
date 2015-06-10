@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.eface2face.apprtc" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>iosrtc-apprtc</name>
+<widget id="com.eface2face.iosrtcapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>iOSRTCApp</name>
     <description>
-        Google's apprtc application for iOS devices using cordova-plugin-iosrtc.
+        Google's AppRTC application adapted to iOS devices using cordova-plugin-iosrtc.
     </description>
     <author email="inaki.baz@eface2face.com" href="https://eface2face.com">
         Iñaki Baz Castillo at eFace2Face, inc.

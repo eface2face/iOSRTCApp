@@ -1,7 +1,7 @@
-![screenshot](https://raw.githubusercontent.com/eface2face/iosrtc-apprtc/master/art/iosrtc-apprtc.jpg)
+![screenshot](https://raw.githubusercontent.com/eface2face/iOSRTCApp/master/art/iosrtc-apprtc.jpg)
 
 
-# iosrtc-apprtc
+# iOSRTCApp
 
 Google's [AppRTC](https://apprtc.appspot.com/) adapted to [Cordova](http://cordova.apache.org/) iOS with pure HTML5/JavaScript and [cordova-plugin-iosrtc](https://github.com/eface2face/cordova-plugin-iosrtc).
 
