@@ -1,4 +1,4 @@
-![screenshot](https://raw.githubusercontent.com/eface2face/iOSRTCApp/master/art/iosrtc-apprtc.jpg)
+![screenshot](https://raw.githubusercontent.com/eface2face/iOSRTCApp/master/art/photo1.jpg)
 
 
 # iOSRTCApp
