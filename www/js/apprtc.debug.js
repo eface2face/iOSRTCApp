@@ -2199,15 +2199,3 @@ apprtc.windowPort = apprtc.windowPort || {};
     return port_;
   };
 })();
-
-
-function updateVideos() {
-  trace("Update iosrtc videos");
-
-  // NOTE: hack, but needed due to CSS transitions and so on.
-  [0, 500, 1000, 1500].forEach(function (delay) {
-    setTimeout(function () {
-      cordova.plugins.iosrtc.refreshVideos();
-    }, delay);
-  });
-}

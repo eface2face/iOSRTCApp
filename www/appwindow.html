@@ -116,48 +116,63 @@
   </div>
 
 
-  <!-- Avoid iOS WebSocket crash.
-          https://github.com/eface2face/cordova-plugin-iosrtc/issues/12 -->
-  <script type="text/javascript" src="js/ios-websocket-hack.js"></script>
   <script type="text/javascript" src="js/performance.now.js"></script>
   <script type="text/javascript" src="cordova.js"></script>
 
   <script type="text/javascript">
-    window.addEventListener('load', function () {
-      console.log('iOSRTCApp >>> DOM loaded');
+    window.addEventListener("load", function () {
+      console.log("iOSRTCApp >>> DOM loaded");
 
-      document.addEventListener('deviceready', function () {
-        console.log('iOSRTCApp >>> "deviceready" event');
+      document.addEventListener("deviceready", function () {
+        console.log("iOSRTCApp >>> deviceready event");
 
-        // Wait a bit since we are adding more stuff into the DOM.
-        setTimeout(function () {
-          cordova.plugins.iosrtc.debug.enable('*');
+        // if iOS devices
+        if (window.device.platform === "iOS") {
+          cordova.plugins.iosrtc.debug.enable("*");
 
           // Pollute global namespace with WebRTC stuff.
           cordova.plugins.iosrtc.registerGlobals();
 
-          // Hack.
-          ['js/apprtc.debug.js', 'js/appwindow.js'].forEach(function (path) {
-            setTimeout(function () {
-              var script = document.createElement('script');
+          window.addEventListener("orientationchange", function () {
+            console.log("iOSRTCApp >>> orientationchange event");
 
-              script.type = 'text/javascript';
+            updateVideos();
+          });
+
+          window.updateVideos = function () {
+            console.debug("iOSRTCApp >>> update iosrtc videos");
+
+            // NOTE: hack, but needed due to CSS transitions and so on.
+            [0, 500, 1000, 1500].forEach(function (delay) {
+              setTimeout(function () {
+                cordova.plugins.iosrtc.refreshVideos();
+              }, delay);
+            });
+          };
+        }
+        // Non iOS devices.
+        else {
+          window.updateVideos = function () {};
+        }
+
+        // Wait a bit since we are adding more stuff into the DOM.
+        setTimeout(function () {
+          // Avoid iOS WebSocket crash:
+          //   https://github.com/eface2face/cordova-plugin-iosrtc/issues/12
+          // Also looad the original AppRTC JS scripts once Cordova is ready (so the iosrtc plugin
+          // has polluted the window namespace with WebRTC class/functions).
+          ["js/ios-websocket-hack.js", "js/apprtc.debug.js", "js/appwindow.js"].forEach(function (path) {
+            setTimeout(function () {
+              var script = document.createElement("script");
+
+              script.type = "text/javascript";
               script.src = path;
-              document.getElementsByTagName('head')[0].appendChild(script);
+              document.getElementsByTagName("head")[0].appendChild(script);
             });
           });
-          // ...since this fails and creates an empty <body>.
-          // document.write('<script type="text/javascript" src="js/apprtc.debug.js"><\/script>');
-          // document.write('<script type="text/javascript" src="js/appwindow.js"><\/script>');
         }, 1000);
-      });
-    });
-
-    window.addEventListener('orientationchange', function () {
-      console.log('iOSRTCApp >>> orientationchange event');
-
-      updateVideos();
-    });
+      });  // End of ondeviceready.
+    });  // End of onload.
   </script>
 
 </body>
