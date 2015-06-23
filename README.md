@@ -10,19 +10,28 @@ This project takes the [HTML5 version](https://github.com/webrtc/apprtc/tree/mas
 
 ## Building
 
-Get the source code and add the Cordova iOS platform:
-
+- Get the source code:
 ```bash
-$ cordova platform add ios
+git clone https://github.com/eface2face/iOSRTCApp
+cd iOSRTCApp
 ```
-
-Then install the *cordova-plugin-iosrtc* (or add it into your Cordova app's `config.xml`):
-
+- Change the Android WebView engine by the [Crosswalk](https://crosswalk-project.org/) one using [the proper plugin](https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview):
 ```bash
-$ cordova plugin add com.eface2face.iosrtc
+cordova plugin add https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview --save
 ```
-
-And run as usual.
+- Then install this plugin:
+```bash
+cordova plugin add com.eface2face.iosrtc --save
+```
+- Add both platforms:
+```bash
+cordova platform add ios android
+```
+- Run as usual:
+```bash
+cordova run android --device
+cordova run ios --device
+```
 
 
 ## Usage

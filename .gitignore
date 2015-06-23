@@ -1,4 +1,18 @@
-/hooks/
-/platforms/
-/plugins/
+# Cordova stuff
+output
+stdout
 
+# Logs and databases
+*.log
+dump.rdb
+output
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

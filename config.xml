@@ -26,6 +26,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" version="1" />
     <plugin name="com.eface2face.iosrtc" spec="^1.2.8" />
+    <plugin name="cordova-plugin-crosswalk-webview" spec="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" />
+    <plugin name="cordova-plugin-device" spec="^1.0.1" />
 </widget>
