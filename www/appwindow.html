@@ -10,6 +10,9 @@
 <head>
 
   <meta charset="utf-8">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval';
+                                                      style-src 'self' 'unsafe-inline'; media-src *; connect-src *">
   <meta name="description" content="WebRTC reference app">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
   <meta itemprop="description" content="Video chat using the reference WebRTC application">
@@ -155,20 +158,19 @@
           window.updateVideos = function () {};
         }
 
-        // Wait a bit since we are adding more stuff into the DOM.
+        // TODO: Wait a bit since we are adding more stuff into the DOM.
         setTimeout(function () {
           // Avoid iOS WebSocket crash:
           //   https://github.com/eface2face/cordova-plugin-iosrtc/issues/12
           // Also looad the original AppRTC JS scripts once Cordova is ready (so the iosrtc plugin
           // has polluted the window namespace with WebRTC class/functions).
           ["js/ios-websocket-hack.js", "js/apprtc.debug.js", "js/appwindow.js"].forEach(function (path) {
-            setTimeout(function () {
-              var script = document.createElement("script");
+            var script = document.createElement("script");
 
-              script.type = "text/javascript";
-              script.src = path;
-              document.getElementsByTagName("head")[0].appendChild(script);
-            });
+            script.type = "text/javascript";
+            script.src = path;
+            script.async = false;
+            document.getElementsByTagName("head")[0].appendChild(script);
           });
         }, 1000);
       });  // End of ondeviceready.

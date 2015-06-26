@@ -8,26 +8,22 @@ Google's [AppRTC](https://apprtc.appspot.com/) adapted to [Cordova](http://cordo
 This project takes the [HTML5 version](https://github.com/webrtc/apprtc/tree/master/src/web_app) of the *AppRTC* application and runs it in Cordova iOS (iPhone, iPad...) by using the [cordova-plugin-iosrtc](https://github.com/eface2face/cordova-plugin-iosrtc) to provide the [WebRTC W3C JavaScript APIs](http://www.w3.org/TR/webrtc/).
 
 
-## Building
+## Building & usage
 
-Get the source code and add the Cordova iOS platform:
-
+- Get the source code:
 ```bash
-$ cordova platform add ios
+git clone https://github.com/eface2face/iOSRTCApp
+cd iOSRTCApp
 ```
-
-Then install the *cordova-plugin-iosrtc* (or add it into your Cordova app's `config.xml`):
-
+- Add both platforms, all needed plugins are installed automatically because of being included in the "config.xml" file:
 ```bash
-$ cordova plugin add com.eface2face.iosrtc
+cordova platform add ios android
 ```
-
-And run as usual.
-
-
-## Usage
-
-Once running, enter the same room as one already created via web browser at https://apprtc.appspot.com/, and enjoy!
+- Run as usual:
+```bash
+cordova run android --device
+```
+- Once running, enter the same room as one already created via web browser at https://apprtc.appspot.com/, and enjoy!
 
 
 ## Changes to the original AppRTC HTML5 code
