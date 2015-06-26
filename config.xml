@@ -25,7 +25,9 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <hook type="after_platform_add" src="hooks/iosrtc-swift-support.js" />
     </platform>
     <plugin name="cordova-plugin-whitelist" version="1" />
-    <plugin name="com.eface2face.iosrtc" spec="^1.2.8" />
+    <plugin name="cordova-plugin-device" version="^1.0.1" />
+    <plugin name="cordova-plugin-iosrtc" version="^1.4.1" />
 </widget>

@@ -402,12 +402,7 @@ AppController.prototype.waitForRemoteVideo_ = function() {
     trace("Remote video started; currentTime: " + this.remoteVideo_.currentTime);
     this.transitionToActive_();
   } else {
-    // NOTE: video.readState not implemented in the iosrtc plugin.
-    // this.remoteVideo_.oncanplay = this.waitForRemoteVideo_.bind(this);
-    var self = this;
-    this.remoteVideo_.oncanplay = function () {
-      self.transitionToActive_();
-    };
+    this.remoteVideo_.oncanplay = this.waitForRemoteVideo_.bind(this);
   }
 };
 AppController.prototype.onRemoteStreamAdded_ = function(stream) {
