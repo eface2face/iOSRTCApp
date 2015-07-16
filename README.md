@@ -12,16 +12,21 @@ This project takes the [HTML5 version](https://github.com/webrtc/apprtc/tree/mas
 
 - Get the source code:
 ```bash
-git clone https://github.com/eface2face/iOSRTCApp
-cd iOSRTCApp
+$ git clone https://github.com/eface2face/iOSRTCApp
+$ cd iOSRTCApp
 ```
-- Add both platforms, all needed plugins are installed automatically because of being included in the "config.xml" file:
+- Install [xcode](https://www.npmjs.com/package/xcode) NPM package:
 ```bash
-cordova platform add ios android
+$ npm i xcode
+```
+- Add both platforms. All the needed plugins are installed automatically because of being included in the "config.xml" file:
+```bash
+$ cordova platform add ios android
 ```
 - Run as usual:
 ```bash
-cordova run android --device
+$ cordova run android --device
+$ cordova run ios --device
 ```
 - Once running, enter the same room as one already created via web browser at https://apprtc.appspot.com/, and enjoy!
 
@@ -30,13 +35,10 @@ cordova run android --device
 
 There are minor changes in the original HTML, JavaScript and CSS in order to make it work as a Cordova application. Those changes are:
 
-* `js/apprtc.debug.js` and `js/appwindow.js` are loaded once Cordova's `ondeviceready` event is fired. This is needed since `js/apprtc.debug.js` relies on existing `window.webkitRTCPeerConnection` and `navigator.webkitGetUserMedia` which are not set by the *cordova-plugin-iosrtc* until `ondeviceready` fires.
-
-* `webrtcDetectedVersion` global variable is hardcoded to `43` (AppRTC JavaScript code expects browser to be Chrome or Chromium, and fails otherwise).
-
-* In order to correctly place video views (iOS native `UIView` elements) the plugin `refreshVideos()` function is called when the local or remote video is set (this is because the CSS video elements use "transition" effects that modify their position and size during 1 second).
-
-* A new CSS file `css/main_overrides.css` changes the properties of video elements. For example, it sets `opacity: 0.85` in `#local-video` and `#remote-video` so HTML call controls are shown even below the native `UIView` elements rendering the local and remote video.
+- `js/apprtc.debug.js` and `js/appwindow.js` are loaded once Cordova's `ondeviceready` event is fired. This is needed since `js/apprtc.debug.js` relies on existing `window.webkitRTCPeerConnection` and `navigator.webkitGetUserMedia` which are not set by the *cordova-plugin-iosrtc* until `ondeviceready` fires.
+- `webrtcDetectedVersion` global variable is hardcoded to `43` (AppRTC JavaScript code expects browser to be Chrome or Chromium, and fails otherwise).
+- In order to correctly place video views (iOS native `UIView` elements) the plugin `refreshVideos()` function is called when the local or remote video is set (this is because the CSS video elements use "transition" effects that modify their position and size during 1 second).
+- A new CSS file `css/main_overrides.css` changes the properties of video elements. For example, it sets `opacity: 0.85` in `#local-video` and `#remote-video` so HTML call controls are shown even below the native `UIView` elements rendering the local and remote video.
 
 
 ## Author
