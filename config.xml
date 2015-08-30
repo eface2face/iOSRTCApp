@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.eface2face.iosrtcapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.eface2face.iosrtcapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>iOSRTCApp</name>
     <description>
         Google's AppRTC application adapted to iOS devices using cordova-plugin-iosrtc.
@@ -33,5 +33,5 @@
     <plugin name="cordova-plugin-crosswalk-webview" spec="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" />
     <plugin name="cordova-plugin-device" version="^1.0.1" />
     <plugin name="cordova-plugin-camera" spec="https://github.com/eface2face/cordova-plugin-camera" />
-    <plugin name="cordova-plugin-iosrtc" version="^1.4.1" />
+    <plugin name="cordova-plugin-iosrtc" version="^1.4.5" />
 </widget>

@@ -1,0 +1,25 @@
+{
+  "name": "iOSRTCApp",
+  "version": "1.0.0",
+  "description": "Google's AppRTC application adapted to iOS devices using cordova-plugin-iosrtc",
+  "dependencies": {
+    "xcode": "^0.8.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eface2face/iOSRTCApp.git"
+  },
+  "keywords": [
+    "cordova-plugin-iosrtc",
+    "apprtc",
+    "ios",
+    "android"
+  ],
+  "author": "Iñaki Baz Castillo at eFace2Face, inc.",
+s "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eface2face/iOSRTCApp/issues"
+  },
+  "homepage": "https://github.com/eface2face/iOSRTCApp"
+}

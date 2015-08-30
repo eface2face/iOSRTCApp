@@ -15,9 +15,9 @@ This project takes the [HTML5 version](https://github.com/webrtc/apprtc/tree/mas
 $ git clone https://github.com/eface2face/iOSRTCApp
 $ cd iOSRTCApp
 ```
-- Install [xcode](https://www.npmjs.com/package/xcode) NPM package:
+- Install NPM dependencies:
 ```bash
-$ npm i xcode
+$ npm install
 ```
 - Add both platforms. All the needed plugins are installed automatically because of being included in the "config.xml" file:
 ```bash
