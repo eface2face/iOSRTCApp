@@ -17,7 +17,7 @@
     "android"
   ],
   "author": "Iñaki Baz Castillo at eFace2Face, inc.",
-s "license": "ISC",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/eface2face/iOSRTCApp/issues"
   },
