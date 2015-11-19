@@ -1,5 +1,7 @@
 ![screenshot](https://raw.githubusercontent.com/eface2face/iOSRTCApp/master/art/photo1.jpg)
 
+*NOTE:* This project is not being actively maintained and it may not work with the latest version of the [cordova-plugin-iosrtc](https://github.com/eface2face/cordova-plugin-iosrtc) or the latest server side code of the Google's AppRTC.
+
 
 # iOSRTCApp
 
